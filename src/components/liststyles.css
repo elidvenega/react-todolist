@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --button-color: #0f766e;
+  --white-color: #fff;
+  --delete-button: #be123c;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 3rem;
+}
+
+.container {
+  text-align: center;
+  margin: auto;
+}
+
+.done {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+input {
+  border: 0.15rem solid #1e293b;
+  width: 40%;
+  min-height: 4vh;
+}
+
+.btn {
+  background-color: var(--button-color);
+  border: none;
+  border-radius: 5%;
+  color: var(--white-color);
+  padding: 0.6rem;
+  width: 3rem;
+}
+
+li {
+  font-size: 1.2rem;
+  list-style: none;
+}
+.del-btn {
+  background-color: var(--delete-button);
+  border: none;
+  border-radius: 5%;
+  color: var(--white-color);
+  height: 4vh;
+  width: 3rem;
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 3rem;
+  }
+  input {
+    min-height: 5vh;
+  }
+}
