@@ -44,8 +44,8 @@ input {
   border: none;
   border-radius: 5%;
   color: var(--white-color);
-  padding: 0.6rem;
-  width: 3rem;
+  padding: 0.3rem;
+  width: 4rem;
 }
 
 li {

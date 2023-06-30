@@ -1,5 +1,6 @@
 import { useState } from "react";
-// import "./liststyles.css";
+import { v4 as uuidv4 } from 'uuid';
+import "./liststyles.css";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -22,15 +23,15 @@ export default function TodoList() {
   }
   return (
     <>
-      <div>
+      <div className="container">
         <h1>Todo List</h1>
         <form>
           <input type="text" value={inputValue} onChange={handleChange} />
-          <button onClick={handleSubmit}>Add Todo</button>
+          <button className="btn" onClick={handleSubmit}>Add Todo</button>
         </form>
         <ul>
           {todos.map((todo, index) => (
-            <li key={todo}>
+            <li key={uuidv4()}>
               {todo}
               <button onClick={() => handleDelete(index)}>Delete</button>
             </li>
