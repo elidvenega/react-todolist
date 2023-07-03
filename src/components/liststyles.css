@@ -1,26 +1,15 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 :root {
   --button-color: #0f766e;
   --white-color: #fff;
   --delete-button: #be123c;
 }
 
-body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
-
 h1 {
+  color: var(--white-color);
   font-size: 2rem;
   text-align: center;
   padding: 3rem;
+
 }
 
 .container {
