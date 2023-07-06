@@ -23,8 +23,8 @@ export default function TodoList() {
   }
   return (
     <>
+    <h1>Todo List</h1>
       <div className="container">
-        <h1>Todo List</h1>
         <form>
           <input type="text" value={inputValue} onChange={handleChange} />
           <button className="btn" onClick={handleSubmit}>Add Todo</button>
@@ -33,7 +33,7 @@ export default function TodoList() {
           {todos.map((todo, index) => (
             <li key={uuidv4()}>
               {todo}
-              <button onClick={() => handleDelete(index)}>Delete</button>
+              <button className="del-btn" onClick={() => handleDelete(index)}>Delete</button>
             </li>
           ))}
         </ul>

@@ -2,18 +2,20 @@
   --button-color: #0f766e;
   --white-color: #fff;
   --delete-button: #be123c;
+  --todo-list-bg-color: #6d28d9;
+  --input-border-color: #155e75;
 }
 
 h1 {
   color: var(--white-color);
   font-size: 2rem;
   text-align: center;
-  padding: 3rem;
-
+  padding: 2rem;
 }
 
 .container {
   text-align: center;
+  align-items: center;
   margin: auto;
 }
 
@@ -23,7 +25,7 @@ h1 {
 }
 
 input {
-  border: 0.15rem solid #1e293b;
+  border: 0.15rem solid var(--input-border-color);
   width: 40%;
   min-height: 4vh;
 }
@@ -33,32 +35,41 @@ input {
   border: none;
   border-radius: 5%;
   color: var(--white-color);
-  padding: 0.3rem;
-  width: 4rem;
+  padding: 0.7rem;
+  margin: 0.3rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 li {
   color: var(--white-color);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  text-transform: capitalize;
   list-style: none;
-  padding: 1rem;
-  background-color: var(--delete-button);
-  margin: 1rem;
+  padding: 1.2rem;
+  background-color: var(--todo-list-bg-color);
+  margin: 0.7rem;
+  width: 40%;
 }
 .del-btn {
   background-color: var(--delete-button);
   border: none;
   border-radius: 5%;
   color: var(--white-color);
-  height: 4vh;
-  width: 3rem;
+  padding: 0.7rem;
+  margin: 0 0 0 1rem;
 }
 
 @media (min-width: 900px) {
   h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
   input {
-    min-height: 5vh;
+    min-height: 6vh;
   }
 }
