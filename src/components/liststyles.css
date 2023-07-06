@@ -38,8 +38,12 @@ input {
 }
 
 li {
+  color: var(--white-color);
   font-size: 1.2rem;
   list-style: none;
+  padding: 1rem;
+  background-color: var(--delete-button);
+  margin: 1rem;
 }
 .del-btn {
   background-color: var(--delete-button);
