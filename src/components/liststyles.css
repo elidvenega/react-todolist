@@ -26,8 +26,8 @@ h1 {
 
 input {
   border: 0.15rem solid var(--input-border-color);
-  width: 50%;
-  min-height: 4vh;
+  width: 70%;
+  padding: 0.4rem;
 }
 
 .btn {
@@ -35,8 +35,8 @@ input {
   border: none;
   border-radius: 5%;
   color: var(--white-color);
-  padding: 0.7rem;
-  margin: 0.3rem;
+  padding: 0.4rem;
+  margin-left: 0.3rem;
 }
 
 ul {
@@ -52,10 +52,10 @@ li {
   font-size: 1.4rem;
   text-transform: capitalize;
   list-style: none;
-  padding: 1.2rem;
+  padding: 0.5rem;
   background-color: var(--todo-list-bg-color);
-  margin: 0.7rem;
-  width: 40%;
+  margin-top: 1rem;
+  width: 70%;
 }
 .del-btn {
   background-color: var(--delete-button);
@@ -71,6 +71,15 @@ li {
     font-size: 3.2rem;
   }
   input {
-    min-height: 6vh;
+    width: 50%;
+  }
+
+  .btn {
+    padding: 0.7rem;
+  }
+
+  li {
+    padding: 1rem;
+    width: 40%;
   }
 }
