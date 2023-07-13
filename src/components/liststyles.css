@@ -2,8 +2,7 @@
   --button-color: #0f766e;
   --white-color: #fff;
   --delete-button: #be123c;
-  --todo-list-bg-color: #7c3aed;
-  --input-border-color: #155e75;
+  --todo-list-bg-color: #1e1b4b;
 }
 
 h1 {
@@ -25,7 +24,7 @@ h1 {
 }
 
 input {
-  border: 0.15rem solid var(--input-border-color);
+  border: none;
   width: 70%;
   padding: 0.4rem;
 }
@@ -34,6 +33,7 @@ input {
   background-color: var(--button-color);
   border: none;
   border-radius: 5%;
+  display: inline-block;
   color: var(--white-color);
   padding: 0.4rem;
   margin-left: 0.3rem;
@@ -52,10 +52,10 @@ li {
   font-size: 1.4rem;
   text-transform: capitalize;
   list-style: none;
-  padding: 0.5rem;
+  padding: 0.4rem;
   background-color: var(--todo-list-bg-color);
   margin-top: 1rem;
-  width: 70%;
+  width: 78%;
 }
 .del-btn {
   background-color: var(--delete-button);
@@ -72,10 +72,6 @@ li {
   }
   input {
     width: 50%;
-  }
-
-  .btn {
-    padding: 0.7rem;
   }
 
   li {
