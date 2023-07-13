@@ -1,6 +1,6 @@
 # React Todo
 
-A simple todo react project feel free to use
+A simple todo react project feel free to use.
 
 ## Client Side
 
@@ -16,4 +16,6 @@ https://vitereact-todo.netlify.app/
   git clone https://github.com/elidvenega/react-todolist.git
   cd react-todolist
   npm install
+  # will be on localhost 3000
+  npm run dev
 ```
