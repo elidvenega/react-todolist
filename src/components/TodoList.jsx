@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import "./liststyles.css";
 
 export default function TodoList() {
+  // an empty array for state
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
@@ -13,6 +14,7 @@ export default function TodoList() {
   function handleSubmit(e) {
     e.preventDefault();
     setTodos([...todos, inputValue]);
+    // this returns an empty input
     setInputValue("");
   }
 
@@ -27,7 +29,7 @@ export default function TodoList() {
       <div className="container">
         <form>
           <input type="text" value={inputValue} onChange={handleChange} />
-          <button className="btn" onClick={handleSubmit}>
+          <button className="btn" type="button" onClick={handleSubmit}>
             Add Todo
           </button>
         </form>
