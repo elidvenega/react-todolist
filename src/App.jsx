@@ -1,11 +1,11 @@
-import TodoList from "./components/TodoList"
+import PracticeTodo from "./components/PracticeTodo";
+// import TodoList from "./components/TodoList"
 
 export default function App() {
   return (
     <>
-    <TodoList />
+      {/* <TodoList /> */}
+      <PracticeTodo />
     </>
-  )
+  );
 }
-
-
