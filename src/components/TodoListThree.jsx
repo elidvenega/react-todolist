@@ -22,7 +22,7 @@ export default function TodoListThree() {
 
   return (
     <div className="container">
-        <h1>Todo List</h1>
+      <h1>Todo List</h1>
       <form>
         <input type="text" placeholder="todo" onChange={handleInput} />
         <button type="button" onClick={handleSubmit}>
@@ -40,4 +40,3 @@ export default function TodoListThree() {
     </div>
   );
 }
-

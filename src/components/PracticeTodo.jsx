@@ -2,21 +2,21 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export default function PracticeTodo() {
-  const [data, SetData] = useState([]);
+  const [data, setData] = useState([]);
   const [text, setText] = useState("");
 
   const handleDataChange = (e) => setText(e.target.value);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    SetData([...data, text]);
+    setData([...data, text]);
     setText("");
   };
 
   const handleDelete = (i) => {
     const newTodos = [...data];
     newTodos.splice(i, 1);
-    SetData(newTodos);
+    setData(newTodos);
   };
   return (
     <div>
