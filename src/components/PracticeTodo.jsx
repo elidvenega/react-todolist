@@ -5,10 +5,8 @@ export default function PracticeTodo() {
   const [data, SetData] = useState([]);
   const [text, setText] = useState("");
 
-  const handleDataChange = (e) => {
-    setText(e.target.value);
-  };
-
+  const handleDataChange = (e) => setText(e.target.value);
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     SetData([...data, text]);

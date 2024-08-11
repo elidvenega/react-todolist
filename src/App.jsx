@@ -1,11 +1,10 @@
-import PracticeTodo from "./components/PracticeTodo";
-// import TodoList from "./components/TodoList"
+import TodoListThree from "./components/TodoListThree";
 
 export default function App() {
   return (
     <>
-      {/* <TodoList /> */}
-      <PracticeTodo />
+    
+     <TodoListThree />
     </>
   );
 }
