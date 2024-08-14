@@ -1,13 +1,11 @@
-// import TodoList from "./components/TodoList";
-import TodoListFourth from "./components/TodoListFourth";
+// import Todos from "./components/Todos";
 
+import Todos from "./components/Todos";
 
 export default function App() {
   return (
     <>
-    
-    <TodoListFourth />
-    {/* <TodoList/> */}
+      <Todos />
     </>
   );
 }
