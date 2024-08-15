@@ -37,7 +37,7 @@ export default function TodoListFourth() {
         </form>
         <ul>
           {list.map((text, index) => (
-            <li key={uuidv4}>
+            <li key={uuidv4()}>
               {text}
               <button
                 className="del-btn"

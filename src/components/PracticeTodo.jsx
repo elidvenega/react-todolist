@@ -35,7 +35,7 @@ export default function PracticeTodo() {
         </form>
         <ul>
           {data.map((todo, index) => (
-            <li key={uuidv4}>
+            <li key={uuidv4()}>
               {todo}
               <button className="del-btn" onClick={() => handleDelete(index)}>
                 Delete

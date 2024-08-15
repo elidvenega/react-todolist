@@ -7,33 +7,32 @@ export default function Todos() {
 
   const handleInput = (e) => setText(e.target.value);
 
-  const handleTask = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setList([...list, text]);
     setText("");
   };
 
   const handleDelete = (index) => {
-    const taskList = [...list];
-    taskList.splice(index, 1);
-
-    setList(taskList);
+    const listItems = [...list];
+    listItems.splice(index, 1);
+    setList(listItems);
   };
   return (
     <>
-      <section>
-        <form>
+      <section className="container">
+        <form action="#">
           <input
             type="text"
-            placeholder="Add Todo"
             value={text}
+            placeholder="Add Todo"
             onChange={handleInput}
           />
-          <button onClick={handleTask}>Add</button>
+          <button onClick={handleSubmit}>Add</button>
         </form>
         <ul>
           {list.map((text, index) => (
-            <li key={uuidv4}>
+            <li key={uuidv4()}>
               {text}
               <button onClick={() => handleDelete(index)}>Delete</button>
             </li>

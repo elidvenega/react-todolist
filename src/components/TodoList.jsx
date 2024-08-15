@@ -28,9 +28,12 @@ export default function TodoList() {
       <h1>Todo List</h1>
       <div className="container">
         <form>
-          <input type="text" 
-          value={inputValue} onChange={handleChange}  
-          placeholder="Add Task"/>
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleChange}
+            placeholder="Add Task"
+          />
           <button className="btn" type="button" onClick={handleSubmit}>
             Add Todo
           </button>
