@@ -1,44 +1,63 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import "./liststyles.css";
+
+// classes bring used
+/* 
+container
+btn
+del-btn
+*/
 
 export default function Todos() {
-  const [list, setList] = useState([]);
-  const [text, setText] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
-  const handleInput = (e) => setText(e.target.value);
+  const handleInput = (e) => setInputValue(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setList([...list, text]);
-    setText("");
+    setTodos([...todos, inputValue]);
+    setInputValue("");
   };
 
-  const handleDelete = (index) => {
-    const listItems = [...list];
-    listItems.splice(index, 1);
-    setList(listItems);
+  const hadleDelete = (index) => {
+    const newList = [...todos];
+    newList.splice(index, 1);
+    setTodos(newList);
   };
+
   return (
     <>
-      <section className="container">
-        <form action="#">
+      <h1>Todo List</h1>
+      <div className="container">
+        <form action="">
           <input
             type="text"
-            value={text}
-            placeholder="Add Todo"
+            placeholder="Add Todod"
+            value={inputValue}
             onChange={handleInput}
           />
-          <button onClick={handleSubmit}>Add</button>
+          <button className="btn" type="submit" onClick={handleSubmit}>
+            Add
+          </button>
         </form>
+
         <ul>
-          {list.map((text, index) => (
+          {todos.map((text, index) => (
             <li key={uuidv4()}>
               {text}
-              <button onClick={() => handleDelete(index)}>Delete</button>
+              <button
+                className="del-btn"
+                type="submit"
+                onClick={() => hadleDelete(index)}
+              >
+                Delete
+              </button>
             </li>
           ))}
         </ul>
-      </section>
+      </div>
     </>
   );
 }

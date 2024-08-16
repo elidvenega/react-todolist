@@ -9,8 +9,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #020617;
-  color: #fff;
+  /* background-color: #020617;
+  color: #fff; */
   min-height: 100vh;
   max-width: 100%;
 }
