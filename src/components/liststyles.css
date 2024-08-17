@@ -1,12 +1,12 @@
 :root {
   --button-color: #0f766e;
   --white-color: #fff;
-  --delete-button: #be123c;
+  --delete-button: #dc2626;
+  --delete-button-hover: #ef4444;
   --todo-list-bg-color: #1e1b4b;
 }
 
 h1 {
-  /* color: var(--white-color); */
   font-size: 2rem;
   text-align: center;
   padding: 2rem;
@@ -66,12 +66,16 @@ li {
   margin: 0 0 0 1rem;
 }
 
+.del-btn:hover {
+  background-color: var(--delete-button-hover);
+}
+
 @media (min-width: 900px) {
   h1 {
     font-size: 3.2rem;
   }
   input {
-    width: 50%;
+    width: 40%;
   }
 
   li {

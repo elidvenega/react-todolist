@@ -21,7 +21,7 @@ export default function Todos() {
     setInputValue("");
   };
 
-  const hadleDelete = (index) => {
+  const handleDelete = (index) => {
     const newList = [...todos];
     newList.splice(index, 1);
     setTodos(newList);
@@ -29,29 +29,24 @@ export default function Todos() {
 
   return (
     <>
-      <h1>Todo List</h1>
       <div className="container">
+        <h1>Todo List</h1>
         <form action="">
           <input
             type="text"
-            placeholder="Add Todod"
+            placeholder="Add Todo"
             value={inputValue}
             onChange={handleInput}
           />
-          <button className="btn" type="submit" onClick={handleSubmit}>
+          <button type="button" className="btn" onClick={handleSubmit}>
             Add
           </button>
         </form>
-
         <ul>
           {todos.map((text, index) => (
             <li key={uuidv4()}>
               {text}
-              <button
-                className="del-btn"
-                type="submit"
-                onClick={() => hadleDelete(index)}
-              >
+              <button type="button" className="del-btn" onClick={() => handleDelete(index)}>
                 Delete
               </button>
             </li>
