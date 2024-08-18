@@ -55,7 +55,7 @@ li {
   padding: 0.4rem;
   background-color: var(--todo-list-bg-color);
   margin-top: 1rem;
-  width: 78%;
+  width: 100%;
 }
 .del-btn {
   background-color: var(--delete-button);

@@ -26,33 +26,35 @@ export default function Todos() {
     newList.splice(index, 1);
     setTodos(newList);
   };
-
   return (
-    <>
-      <div className="container">
-        <h1>Todo List</h1>
-        <form action="">
-          <input
-            type="text"
-            placeholder="Add Todo"
-            value={inputValue}
-            onChange={handleInput}
-          />
-          <button type="button" className="btn" onClick={handleSubmit}>
-            Add
-          </button>
-        </form>
-        <ul>
-          {todos.map((text, index) => (
-            <li key={uuidv4()}>
-              {text}
-              <button type="button" className="del-btn" onClick={() => handleDelete(index)}>
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </>
+    <div className="container">
+      <h1>Todo List</h1>
+      <form action="">
+        <input
+          type="text"
+          placeholder="Add Todo"
+          value={inputValue}
+          onChange={handleInput}
+        />
+        <button type="button" className="btn" onClick={handleSubmit}>
+          Add
+        </button>
+      </form>
+
+      <ul>
+        {todos.map((text, index) => (
+          <li key={uuidv4()}>
+            {text}
+            <button
+              type="button"
+              className="del-btn"
+              onClick={() => handleDelete(index)}
+            >
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
