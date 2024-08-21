@@ -1,10 +1,9 @@
-import StorageTodo from "./components/StorageTodo";
-
+import KeyDownTodo from "./components/KeyDownTodo";
 
 export default function App() {
   return (
     <>
-     <StorageTodo />
+      <KeyDownTodo />
     </>
   );
 }
