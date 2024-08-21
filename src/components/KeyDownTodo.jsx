@@ -9,15 +9,15 @@ btn
 del-btn
 */
 
-const dailyTodos = ["Shit", "Eat", "Read"];
-export default function Todos() {
+const dailyTodos = ["Shit", "Eat", "Work"];
+export default function KeyDownTodo() {
   const [todoList, setTodoList] = useState(dailyTodos);
   const [inputValue, setInputValue] = useState("");
 
   const handleInput = (e) => setInputValue(e.target.value);
 
   const handleSubmit = () => {
-    if (inputValue.trim() !== "") {
+    if (todoList.trim() !== "") {
       setTodoList([...todoList, inputValue]);
       setInputValue("");
     }
@@ -27,25 +27,24 @@ export default function Todos() {
     const newList = [...todoList];
     newList.splice(index, 1);
     setTodoList(newList);
-  };
+  };  
 
   const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault(); // Prevent the form from submitting on Enter
+    e.preventDefault();
+    if (e.key === "enter") {
       handleSubmit();
     }
   };
-
   return (
-    <div className="container">
+    <div color="container">
+      <h1>Todod List</h1>
       <form action="">
-        <h1>Todo List</h1>
         <input
           type="text"
           placeholder="Add Todo"
           value={inputValue}
           onChange={handleInput}
-          onKeyDown={handleKeyDown} // Added onKeyDown here
+          onKeyDown={handleKeyDown}
         />
         <button type="button" className="btn" onClick={handleSubmit}>
           Add
@@ -56,8 +55,8 @@ export default function Todos() {
           <li key={uuidv4()}>
             {text}
             <button
-              className="del-btn"
               type="button"
+              className="del-btn"
               onClick={() => handleDelete(index)}
             >
               Delete

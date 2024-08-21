@@ -1,9 +1,10 @@
-import Todos from "./components/Todos";
+import StorageTodo from "./components/StorageTodo";
+
 
 export default function App() {
   return (
     <>
-      <Todos />
+     <StorageTodo />
     </>
   );
 }
