@@ -9,24 +9,30 @@ btn
 del-btn
 */
 
+//1.HTMl first and Text
+//2. CSS CLasses
+//3. functions
+//4. click events and map
+
 const dailyTodos = ["Shit", "Eat", "Cook"];
+
 export default function KeyDownTodo() {
-  const [todoList, setTodoList] = useState(dailyTodos);
+  const [todos, setTodos] = useState(dailyTodos);
   const [inputValue, setInputValue] = useState("");
 
   const handleInput = (e) => setInputValue(e.target.value);
 
   const handleSubmit = () => {
     if (inputValue.trim() !== "") {
-      setTodoList([...todoList, inputValue]);
+      setTodos([...todos, inputValue]);
       setInputValue("");
     }
   };
 
   const handleDelete = (index) => {
-    const newList = [...todoList];
+    const newList = [...todos];
     newList.splice(index, 1);
-    setTodoList(newList);
+    setTodos(newList);
   };
 
   const handleKeyDown = (e) => {
@@ -35,7 +41,6 @@ export default function KeyDownTodo() {
       handleSubmit();
     }
   };
-
   return (
     <div className="container">
       <h1>Todo List</h1>
@@ -52,14 +57,16 @@ export default function KeyDownTodo() {
         </button>
       </form>
       <ul>
-        {todoList.map((text, index) => (
+        {todos.map((text, index) => (
           <li key={uuidv4()}>
             {text}
             <button
               type="button"
               className="del-btn"
               onClick={() => handleDelete(index)}
-            >Delete</button>
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>
