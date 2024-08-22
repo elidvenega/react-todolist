@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import "./liststyles.css";
+import "../liststyles.css";
 
 // classes being used
 /* 
@@ -17,22 +17,22 @@ del-btn
 const dailyTodos = ["Shit", "Eat", "Cook"];
 
 export default function KeyDownTodo() {
-  const [todos, setTodos] = useState(dailyTodos);
+  const [todoList, setTodolist] = useState(dailyTodos);
   const [inputValue, setInputValue] = useState("");
 
   const handleInput = (e) => setInputValue(e.target.value);
 
   const handleSubmit = () => {
     if (inputValue.trim() !== "") {
-      setTodos([...todos, inputValue]);
+      setTodolist([...todoList, inputValue]);
       setInputValue("");
     }
   };
 
   const handleDelete = (index) => {
-    const newList = [...todos];
+    const newList = [...todoList];
     newList.splice(index, 1);
-    setTodos(newList);
+    setTodolist(newList);
   };
 
   const handleKeyDown = (e) => {
@@ -57,7 +57,7 @@ export default function KeyDownTodo() {
         </button>
       </form>
       <ul>
-        {todos.map((text, index) => (
+        {todoList.map((text, index) => (
           <li key={uuidv4()}>
             {text}
             <button
