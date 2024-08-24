@@ -17,14 +17,14 @@ del-btn
 const dailyTodos = ["Shit", "Eat", "Cook"];
 
 export default function KeyDownTodo() {
-  const [todoList, setTodolist] = useState(dailyTodos);
+  const [todoList, setTodoList] = useState(dailyTodos);
   const [inputValue, setInputValue] = useState("");
 
   const handleInput = (e) => setInputValue(e.target.value);
 
   const handleSubmit = () => {
     if (inputValue.trim() !== "") {
-      setTodolist([...todoList, inputValue]);
+      setTodoList([...todoList, inputValue]);
       setInputValue("");
     }
   };
@@ -32,7 +32,7 @@ export default function KeyDownTodo() {
   const handleDelete = (index) => {
     const newList = [...todoList];
     newList.splice(index, 1);
-    setTodolist(newList);
+    setTodoList(newList);
   };
 
   const handleKeyDown = (e) => {
@@ -41,6 +41,7 @@ export default function KeyDownTodo() {
       handleSubmit();
     }
   };
+
   return (
     <div className="container">
       <h1>Todo List</h1>
@@ -52,13 +53,11 @@ export default function KeyDownTodo() {
           onChange={handleInput}
           onKeyDown={handleKeyDown}
         />
-        <button type="button" className="btn" onClick={handleSubmit}>
-          Add
-        </button>
+        <button type="button" className="btn" onClick={handleSubmit}>Add</button>
       </form>
       <ul>
         {todoList.map((text, index) => (
-          <li key={uuidv4()}>
+          <li key={uuidv4}>
             {text}
             <button
               type="button"
