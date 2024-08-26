@@ -14,7 +14,7 @@ del-btn
 //3. functions
 //4. click events and map
 
-const dailyTodos = ["Shit", "Eat", "Cook"];
+const dailyTodos = ["Shit", "Eat", "Cook", "Fart"];
 
 export default function KeyDownTodo() {
   const [todoList, setTodoList] = useState(dailyTodos);
@@ -41,7 +41,6 @@ export default function KeyDownTodo() {
       handleSubmit();
     }
   };
-
   return (
     <div className="container">
       <h1>Todo List</h1>
@@ -53,11 +52,13 @@ export default function KeyDownTodo() {
           onChange={handleInput}
           onKeyDown={handleKeyDown}
         />
-        <button type="button" className="btn" onClick={handleSubmit}>Add</button>
+        <button type="button" className="btn" onClick={handleSubmit}>
+          Add
+        </button>
       </form>
       <ul>
         {todoList.map((text, index) => (
-          <li key={uuidv4}>
+          <li key={uuidv4()}>
             {text}
             <button
               type="button"
