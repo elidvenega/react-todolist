@@ -1,5 +1,6 @@
 :root {
   --button-color: #0f766e;
+  --button-color-hover: #0d9488;
   --white-color: #fff;
   --delete-button: #dc2626;
   --delete-button-hover: #ef4444;
@@ -37,6 +38,10 @@ input {
   color: var(--white-color);
   padding: 0.4rem;
   margin-left: 0.3rem;
+}
+
+.btn:hover {
+  background-color: var(--button-color-hover);
 }
 
 ul {
