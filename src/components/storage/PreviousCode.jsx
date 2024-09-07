@@ -9,11 +9,10 @@ btn
 del-btn
 */
 
-const dailyTodos = ["Shit", "Eat", "Brush Teeth", "Walk"];
-export default function PracticeStorage() {
-  // Load todos from localStorage or use the initial list if none are found
-  //  const storage = JSON.parse(localStorage.getItems('items')) || dailyTodos
-  const storedTodos = JSON.parse(localStorage.getItem("items")) || dailyTodos;
+const dailyTodos = ["Shit", "Eat", "Walk", "Read"];
+
+export default function PreviousCode() {
+  const storedTodos = JSON.parse(localStorage.getItem("todos")) || dailyTodos;
   const [todoList, setTodoList] = useState(storedTodos);
   const [inputValue, setInputValue] = useState("");
 
@@ -24,7 +23,7 @@ export default function PracticeStorage() {
       const newTodoList = [...todoList, inputValue];
       setTodoList(newTodoList);
       setInputValue("");
-      localStorage.setItem("items", JSON.stringify(newTodoList));
+      localStorage.setItem("todos", JSON.stringify(newTodoList));
     }
   };
 
@@ -32,27 +31,26 @@ export default function PracticeStorage() {
     const newList = [...todoList];
     newList.splice(index, 1);
     setTodoList(newList);
-    localStorage.setItem("items", JSON.stringify(newList));
+    localStorage.setItem("todos", JSON.stringify(newList));
   };
 
   const handleKeyDown = (e) => {
-    if(e.key === "Enter") {
+    if (e.key === "Enter") {
       e.preventDefault();
-      handleSubmit()
+      handleSubmit();
     }
-  }
-  
+  };
+
   useEffect(() => {
-    const savedTodos = JSON.parse(localStorage.getItem("items"));
+    const savedTodos = JSON.parse(localStorage.getItem("todos"));
     if (savedTodos) {
       setTodoList(savedTodos);
     }
   }, []);
-
   return (
     <div className="container">
+      <h1>Todo List</h1>
       <form action="">
-        <h1>Todo List</h1>
         <input
           type="text"
           placeholder="Add Todo"
@@ -60,7 +58,7 @@ export default function PracticeStorage() {
           onChange={handleInput}
           onKeyDown={handleKeyDown}
         />
-        <button className="btn" type="button" onClick={handleSubmit}>
+        <button type="button" className="btn" onClick={handleSubmit}>
           Add Todo
         </button>
       </form>
